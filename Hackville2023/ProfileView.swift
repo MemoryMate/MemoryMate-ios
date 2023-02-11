@@ -12,6 +12,7 @@ struct ProfileView: View {
     @State var password:String = ""
 
     var body: some View {
+        NavigationView{
         VStack{
             Image("logo")
                 .resizable()
@@ -32,21 +33,17 @@ struct ProfileView: View {
                 .frame(width:350)
                 .padding(.bottom,20)
             
-            Button(action: {
-                
-            }, label: {
-                Text("LOGIN")
-                    .font(.headline)
-                    .foregroundColor(.white)
-                    .padding()
-                    .frame(width:220,height: 60)
-                    .background(.black)
-                    .cornerRadius(5.0)
-            })
-         
-            
-      
-
+        
+                NavigationLink(destination: ReminderView()){
+                    Text("LOGIN")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(width:220,height: 60)
+                        .background(.black)
+                        .cornerRadius(5.0)
+                }
+            }
             
         }
     }
