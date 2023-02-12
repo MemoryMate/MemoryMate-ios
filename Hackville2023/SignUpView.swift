@@ -10,10 +10,11 @@ import SwiftUI
 struct SignUpView: View {
     @State var firstName:String = ""
     @State var lastName:String = ""
-    @State var username:String = ""
+    @State var userName:String = ""
     @State var password:String = ""
+    @State private var users: [User] = [User]()
+    let coreDM: CoreDataManager
     @State private var animationAmount: CGFloat = 1
-
     var body: some View {
         NavigationView{
         VStack{
@@ -34,7 +35,7 @@ struct SignUpView: View {
                 .cornerRadius(5.0)
                 .frame(width:350)
                 .padding(.bottom,20)
-            TextField("Username", text:$username)
+            TextField("Username", text:$userName)
                 .padding().background(Color(.systemGray6))
                 .cornerRadius(5.0)
                 .frame(width:350)
@@ -46,6 +47,14 @@ struct SignUpView: View {
                 .frame(width:350)
                 .padding(.bottom,20)
             
+            Button("Save"){
+                coreDM.saveUser(firstName: firstName, lastName: lastName, userName: userName, password: password)
+                self.users =  coreDM.getAllUsers()
+            }
+            
+            List(users, id: \.self) { user in
+                Text(user.firstName ?? "")
+            }
 
                 NavigationLink(destination: HomeView()){
                     Text("SIGN UP")
@@ -66,7 +75,9 @@ struct SignUpView: View {
                 }
                 
             
-            
+                .onAppear(perform: {
+                    self.users =  coreDM.getAllUsers()
+                })
             }
             
         }
@@ -75,6 +86,6 @@ struct SignUpView: View {
 
 struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
-        SignUpView()
+        SignUpView(coreDM:CoreDataManager())
     }
 }
