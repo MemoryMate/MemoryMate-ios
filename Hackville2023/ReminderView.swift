@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct ReminderView: View {
     @State var selectedDate: Date = Date()
-    @State var reminderDescription:String = ""
+    @State private var reminderDescription:String = ""
     @State var notes:String = ""
     @State var sendTo:String = ""
     let categories = ["Activities", "Heath", "Task", "Feelings", "Appointments"]
@@ -19,7 +20,24 @@ struct ReminderView: View {
  
     var body: some View {
         ScrollView{
-            VStack{
+         //   VStack{
+                
+            
+//                Button(action:{
+//                    let utterance = AVSpeechUtterance(string:"You have set a reminder for :\(reminderDescription)")
+//                    utterance.voice = AVSpeechSynthesisVoice(language: "en-AU")
+//                    utterance.rate = 0.57
+//                    utterance.pitchMultiplier = 0.8
+//                    utterance.postUtteranceDelay = 0.2
+//                    utterance.volume = 0.8
+//                    let syntesizer = AVSpeechSynthesizer()
+//                    syntesizer.speak(utterance)
+//                }){
+//                    Text("Listen")
+//                }
+//                }.frame(maxWidth: .infinity, alignment: .leading).padding(.leading,10.0)
+            
+            
                 Image("reminders")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
@@ -74,7 +92,7 @@ struct ReminderView: View {
                     
                 }
             }
-        }
+        
     }
 }
 

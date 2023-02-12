@@ -6,11 +6,10 @@
 //
 
 import SwiftUI
-
 struct HomeView: View {
 
     var body: some View {
-        NavigationView{
+   
         ScrollView{
                 VStack{
                     VStack(alignment: .leading, spacing: 5){
@@ -44,7 +43,6 @@ struct HomeView: View {
                        
                     }
                 }
-            }
         }
     }
 }
