@@ -34,7 +34,7 @@ struct ProfileView: View {
                 .padding(.bottom,20)
             
         
-                NavigationLink(destination: ReminderView()){
+                NavigationLink(destination: HomeView()){
                     Text("LOGIN")
                         .font(.headline)
                         .foregroundColor(.white)
