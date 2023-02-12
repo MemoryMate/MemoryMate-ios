@@ -67,6 +67,8 @@ struct MatesView: View {
             })
             
             
+        }.onAppear(){
+            vm.fetchData(id: "63e82910911dec2cc4f0f65a")
         }
         
     }

@@ -53,7 +53,7 @@ struct SignUpView: View {
                 coreDM.saveUser(firstName: firstName, lastName: lastName, userName: userName, password: password)
                 self.users =  coreDM.getAllUsers()
             },label: {
-                NavigationLink(destination: HomeView()){
+                NavigationLink(destination: HomeView(coreDM:CoreDataManager())){
                     Text("SIGN UP")
                         .font(.headline)
                               .foregroundColor(.white)

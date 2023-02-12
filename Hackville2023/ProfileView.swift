@@ -41,7 +41,7 @@ struct ProfileView: View {
             Button(action:{
               
             },label: {
-                NavigationLink(destination: HomeView()){
+                NavigationLink(destination: HomeView(coreDM:CoreDataManager())){
                     Text("LOGIN")
                         .font(.headline)
                               .foregroundColor(.white)

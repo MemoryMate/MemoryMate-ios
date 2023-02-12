@@ -1,56 +1,42 @@
 //
-//  MateViewModel.swift
+//  ReminderViewModel.swift
 //  Hackville2023
 //
-//  Created by Chris Couto on 2023-02-11.
+//  Created by Chris Couto on 2023-02-12.
 //
 
 import Foundation
-import Alamofire
-import SwiftyJSON
 
-struct Mate: Codable, Identifiable {
+struct Reminder: Codable, Identifiable {
     
     var _id: String
     var id: String {
         _id
     }
-    var firstName: String = ""
-    var lastName: String = ""
-    var image: String = ""
-    var apnToken: String = ""
-    var __v: Int = 0
-    var mates: [Mate] = []
-    var phone: Int = 0
+    var senderName: String = ""
+    var senderImage: String = ""
+    var isReoccuring: Bool = false
+    var title: String = ""
+    var category: String = ""
+    var notes: String = ""
+    var time: String = ""
+    var sendTo: String = ""
+    var __v : Int = 0
     
-    
-    static func isLoggedIn() -> Bool {
-        if UserDefaults.standard.value(forKey: "userId") != nil {
-            return true
-        }
-        return false
-      }
-    
-    static func setUserNotificationToken(token: String, completionHandler: (_ success:Bool) -> ()) {
-        let parameters = [
-            "token": token
-        ]
-        print(token)
-      }
     
     
 }
 
-class MateViewModel: ObservableObject {
+class ReminderViewModel: ObservableObject {
     
     // properties
-    @Published var mates: [Mate] = [] // publish it to SwiftUI
+    @Published var reminders: [Reminder] = [] // publish it to SwiftUI
     
     // fetch data using closure
     func fetchData(id: String){
         
         //build URL from string
-        let urlString = "http://10.80.5.31:3000/api/users/mates/\(id)"
+        let urlString = "http://10.80.5.31:3000/api/users/reminders/\(id)"
         guard let url = URL(string: urlString) else {
             print("Cannot create URL")
             return
@@ -71,12 +57,13 @@ class MateViewModel: ObservableObject {
                 return
             }
             
+            print(data)
             //3. parse JSON
-            if let json = try? JSONDecoder().decode([Mate].self, from: data){
+            if let json = try? JSONDecoder().decode([Reminder].self, from: data){
                 //success
                 DispatchQueue.main.async {
                     // update GUI in main thread
-                    self.mates = json
+                    self.reminders = json
                     dump(json)
                 }
                 
@@ -115,10 +102,10 @@ class MateViewModel: ObservableObject {
             
             //3. parse JSON
             let decoder = JSONDecoder()
-            let json = try decoder.decode([Mate].self, from: data)
+            let json = try decoder.decode([Reminder].self, from: data)
             //success, update data in main thread
             DispatchQueue.main.async {
-                self.mates = json
+                self.reminders = json
                 //dump(json)
             }
             
@@ -131,3 +118,4 @@ class MateViewModel: ObservableObject {
     
     
 }
+
