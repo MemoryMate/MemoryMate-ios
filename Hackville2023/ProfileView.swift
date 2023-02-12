@@ -10,6 +10,7 @@ import SwiftUI
 struct ProfileView: View {
     @State var username:String = ""
     @State var password:String = ""
+    @State private var animationAmount: CGFloat = 1
 
     var body: some View {
         NavigationView{
@@ -42,6 +43,14 @@ struct ProfileView: View {
                         .frame(width:220,height: 60)
                         .background(.black)
                         .cornerRadius(5.0)
+                        .scaleEffect(animationAmount)
+                                    .animation(
+                                        Animation.easeInOut(duration: 7)
+                                            .repeatForever(autoreverses: true)
+                                    )
+                                    .onAppear {
+                                        self.animationAmount = 1.5
+                                    }
                 }
             }
             
