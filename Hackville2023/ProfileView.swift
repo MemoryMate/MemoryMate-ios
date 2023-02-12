@@ -48,15 +48,7 @@ struct ProfileView: View {
                               .padding()
                                .frame(width:220,height: 60)
                                .background(.black)
-                               .cornerRadius(5.0)
-                                .scaleEffect(animationAmount)
-                              .animation(
-                           Animation.easeInOut(duration: 20)
-                               .repeatForever(autoreverses: true)
-                                    )
-                             .onAppear {
-                                    self.animationAmount = 1.5
-                            }
+                               .cornerRadius(5.0)                           
                 }
             })
             .onAppear(perform: {

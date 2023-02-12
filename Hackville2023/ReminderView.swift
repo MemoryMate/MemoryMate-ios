@@ -74,6 +74,13 @@ struct ReminderView: View {
                     }.pickerStyle(.segmented).padding()
                     
                 }
+            
+            NavigationLink(destination: ReminderView()){
+               
+                Label("SUBMIT", systemImage: "checkmark").frame(width: 350,height: 50).background(Color(uiColor: UIColor(red: 131/255, green: 209/255, blue: 217/255, alpha: 1))).cornerRadius(15.0).foregroundColor(Color.black)
+               
+            }
+            
             }
         
     }
