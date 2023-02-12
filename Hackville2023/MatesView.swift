@@ -12,7 +12,7 @@ import SwiftUI
 struct MatesView: View {
     
     // properties
-    @State var phoneNum: String
+    @State var phoneNum: String = "19056165625"
     
     @State var presentAlert: Bool
     
@@ -45,6 +45,8 @@ struct MatesView: View {
             }
             .navigationTitle("Mates (\(vm.mates.count))")
             
+            
+            
             Button(action: {
                 presentAlert = true
             }, label: {
@@ -57,10 +59,33 @@ struct MatesView: View {
                     .cornerRadius(5.0)
             })
             .alert("Invite A Mate", isPresented: $presentAlert, actions: {
+                
+                
                 TextField("Phone #:", text: $phoneNum)
 
                 
-                Button("Invite", action: {})
+                Button("Invite", action: {
+                    
+                    //if let phone = phoneNum {
+                    print(phoneNum)
+                    
+                    let url = URL(string: "http://10.80.5.31:3000/api/users/invite/63e82910911dec2cc4f0f65a/\(phoneNum)")!
+                    
+                    var request = URLRequest(url: url)
+                    
+                    let task = URLSession.shared.dataTask(with: url) { data, response, error in
+                        if let data = data {
+                            print("There is data")
+                            print(response)
+                        } else if let error = error {
+                            print("HTTP Request Failed \(error)")
+                        }
+                    }
+                    task.resume()
+                    
+                //}
+                })
+                
                 Button("Cancel", role: .cancel, action: {})
             }, message: {
                 Text("Please enter the phone number of the person you would like to invite to be your mate.")
