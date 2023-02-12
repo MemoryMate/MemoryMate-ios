@@ -8,17 +8,6 @@
 import Foundation
 import SwiftUI
 
-struct User: Identifiable {
-    
-    var id: String = ""
-    var firstName: String = ""
-    var lastName: String = ""
-    var image: String = ""
-    var isLoggedIn = false
-    
-}
-
-
 
 struct MatesView: View {
     
@@ -30,18 +19,19 @@ struct MatesView: View {
     // properties
     @StateObject var vm: MateViewModel = MateViewModel()
     
-//
-//    let john = User(firstName: "John", lastName: "Doe", image: "https://randomuser.me/api/portraits/men/21.jpg")
-//    let rich = User(firstName: "Richard", lastName: "Brauer", image: "https://randomuser.me/api/portraits/men/24.jpg")
-//    let ric = User(firstName: "Ric", lastName: "Lee", image: "https://randomuser.me/api/portraits/men/22.jpg")
-//    let joan = User(firstName: "Joan", lastName: "Mcgee", image: "https://randomuser.me/api/portraits/women/24.jpg")
-//    let alice = User(firstName: "Alice", lastName: "Lansdown", image: "https://randomuser.me/api/portraits/women/22.jpg")
-//    let megan = User(firstName: "Megan", lastName: "Nguyen", image: "https://randomuser.me/api/portraits/women/23.jpg")
-//
     
     var body: some View {
         
         VStack {
+            
+            Image("matespageimage")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 170,height: 170)
+                .clipped()
+                .cornerRadius(150)
+                .padding(.bottom,20)
+            
             
             List(vm.mates) { m in
                 VStack {
