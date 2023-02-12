@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6F10857C29983B0800F5DFBD /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F10857B29983B0800F5DFBD /* ReminderView.swift */; };
 		6F10857E29983C2700F5DFBD /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F10857D29983C2700F5DFBD /* HomeView.swift */; };
+		6F1085822998AC4C00F5DFBD /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1085812998AC4C00F5DFBD /* SignUpView.swift */; };
 		6F29BAC029980B5900F8A6AA /* Hackville2023App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F29BABF29980B5900F8A6AA /* Hackville2023App.swift */; };
 		6F29BAC229980B5900F8A6AA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F29BAC129980B5900F8A6AA /* ContentView.swift */; };
 		6F29BAC429980B5A00F8A6AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F29BAC329980B5A00F8A6AA /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		6F10857B29983B0800F5DFBD /* ReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderView.swift; sourceTree = "<group>"; };
 		6F10857D29983C2700F5DFBD /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		6F1085812998AC4C00F5DFBD /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		6F29BABC29980B5900F8A6AA /* Hackville2023.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hackville2023.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F29BABF29980B5900F8A6AA /* Hackville2023App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hackville2023App.swift; sourceTree = "<group>"; };
 		6F29BAC129980B5900F8A6AA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 				6F29BABF29980B5900F8A6AA /* Hackville2023App.swift */,
 				6F29BACD2998178E00F8A6AA /* ProfileView.swift */,
 				6F10857B29983B0800F5DFBD /* ReminderView.swift */,
+				6F1085812998AC4C00F5DFBD /* SignUpView.swift */,
 				6F10857D29983C2700F5DFBD /* HomeView.swift */,
 				6F29BAC129980B5900F8A6AA /* ContentView.swift */,
 				6F29BAC329980B5A00F8A6AA /* Assets.xcassets */,
@@ -166,6 +169,7 @@
 				6F10857C29983B0800F5DFBD /* ReminderView.swift in Sources */,
 				6F10857E29983C2700F5DFBD /* HomeView.swift in Sources */,
 				6F29BAC029980B5900F8A6AA /* Hackville2023App.swift in Sources */,
+				6F1085822998AC4C00F5DFBD /* SignUpView.swift in Sources */,
 				7643F8352998337100EAFDB9 /* MatesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

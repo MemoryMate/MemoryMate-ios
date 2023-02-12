@@ -7,7 +7,9 @@
 
 import SwiftUI
 
-struct ProfileView: View {
+struct SignUpView: View {
+    @State var firstName:String = ""
+    @State var lastName:String = ""
     @State var username:String = ""
     @State var password:String = ""
     @State private var animationAmount: CGFloat = 1
@@ -22,6 +24,16 @@ struct ProfileView: View {
                 .clipped()
                 .cornerRadius(150)
                 .padding(.bottom,75)
+            TextField("First Name", text:$firstName)
+                .padding().background(Color(.systemGray6))
+                .cornerRadius(5.0)
+                .frame(width:350)
+                .padding(.bottom,20)
+            TextField("Last Name", text:$lastName)
+                .padding().background(Color(.systemGray6))
+                .cornerRadius(5.0)
+                .frame(width:350)
+                .padding(.bottom,20)
             TextField("Username", text:$username)
                 .padding().background(Color(.systemGray6))
                 .cornerRadius(5.0)
@@ -34,9 +46,9 @@ struct ProfileView: View {
                 .frame(width:350)
                 .padding(.bottom,20)
             
-            Section{
+
                 NavigationLink(destination: HomeView()){
-                    Text("LOGIN")
+                    Text("SIGN UP")
                         .font(.headline)
                         .foregroundColor(.white)
                         .padding()
@@ -53,7 +65,7 @@ struct ProfileView: View {
                         }
                 }
                 
-            }.disabled(username.isEmpty || password.isEmpty)
+            
             
             }
             
@@ -61,8 +73,8 @@ struct ProfileView: View {
     }
 }
 
-struct ProfileView_Previews: PreviewProvider {
+struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView()
+        SignUpView()
     }
 }
