@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct ProfileView: View {
     @State var username:String = ""
     @State var password:String = ""
     @State private var animationAmount: CGFloat = 1
+    @Environment(\.managedObjectContext) var managedObjectContext
 
     var body: some View {
         NavigationView{
@@ -34,26 +36,46 @@ struct ProfileView: View {
                 .frame(width:350)
                 .padding(.bottom,20)
             
-            Section{
+            Button(action:{
+            },label: {
                 NavigationLink(destination: HomeView()){
                     Text("LOGIN")
                         .font(.headline)
-                        .foregroundColor(.white)
-                        .padding()
-                        .frame(width:220,height: 60)
-                        .background(.black)
-                        .cornerRadius(5.0)
-                        .scaleEffect(animationAmount)
-                        .animation(
-                            Animation.easeInOut(duration: 20)
-                                .repeatForever(autoreverses: true)
-                        )
-                        .onAppear {
-                            self.animationAmount = 1.5
-                        }
+                              .foregroundColor(.white)
+                              .padding()
+                               .frame(width:220,height: 60)
+                               .background(.black)
+                               .cornerRadius(5.0)
+                                .scaleEffect(animationAmount)
+                              .animation(
+                           Animation.easeInOut(duration: 20)
+                               .repeatForever(autoreverses: true)
+                                    )
+                             .onAppear {
+                                    self.animationAmount = 1.5
+                            }
                 }
+            })
+            
+//                NavigationLink(destination: HomeView()){
+//                    Text("LOGIN")
+//                        .font(.headline)
+//                        .foregroundColor(.white)
+//                        .padding()
+//                        .frame(width:220,height: 60)
+//                        .background(.black)
+//                        .cornerRadius(5.0)
+//                        .scaleEffect(animationAmount)
+//                        .animation(
+//                            Animation.easeInOut(duration: 20)
+//                                .repeatForever(autoreverses: true)
+//                        )
+//                        .onAppear {
+//                            self.animationAmount = 1.5
+//                        }
+//                }
                 
-            }.disabled(username.isEmpty || password.isEmpty)
+            
             
             }
             
