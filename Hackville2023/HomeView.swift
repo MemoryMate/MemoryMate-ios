@@ -25,7 +25,7 @@ struct HomeView: View {
                                 .aspectRatio(contentMode: .fit)
                         }.frame(maxWidth: .infinity, alignment: .leading).padding(.leading,10.0)
                     VStack(alignment: .leading, spacing: 0){
-                        NavigationLink(destination: ReminderView()){
+                        NavigationLink(destination: MatesView(phoneNum: "", presentAlert: false)){
                             Label("",systemImage: "person.3.sequence.fill").foregroundColor(Color.black).frame(width: 80,height: 50)
                         }
                     }.frame(maxWidth: .infinity, alignment: .trailing).padding(.leading,15.0)

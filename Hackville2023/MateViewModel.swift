@@ -19,9 +19,9 @@ struct Mate: Codable, Identifiable {
     var lastName: String = ""
     var image: String = ""
     var apnToken: String = ""
-    var isLoggedIn = false
     var __v: Int = 0
     var mates: [Mate] = []
+    var phone: Int = 0
     
     
     static func isLoggedIn() -> Bool {
@@ -50,7 +50,7 @@ class MateViewModel: ObservableObject {
     func fetchData(id: String){
         
         //build URL from string
-        let urlString = "http://10.80.5.31/api/users/mates/\(id)"
+        let urlString = "http://10.80.5.31:3000/api/users/mates/\(id)"
         guard let url = URL(string: urlString) else {
             print("Cannot create URL")
             return
@@ -77,7 +77,7 @@ class MateViewModel: ObservableObject {
                 DispatchQueue.main.async {
                     // update GUI in main thread
                     self.mates = json
-                    //dump(json)
+                    dump(json)
                 }
                 
             } else {
