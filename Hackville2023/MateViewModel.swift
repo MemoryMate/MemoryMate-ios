@@ -15,6 +15,7 @@ struct Mate: Codable, Identifiable {
     var lastName: String = ""
     var image: String = ""
     var isLoggedIn = false
+    var mates: [Mate] = []
     
 }
 
