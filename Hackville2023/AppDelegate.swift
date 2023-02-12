@@ -8,12 +8,18 @@
 import Foundation
 import UIKit
 import UserNotifications
+import CoreData
 
 class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate {
-    
+    let persistentContainer = NSPersistentContainer(name: "Hackville2023")
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        persistentContainer.loadPersistentStores { (storeDescription, error) in
+                if let error = error {
+                    fatalError("Failed to load store: \(error)")
+                }
+            }
         UNUserNotificationCenter.current().delegate = self
         UNUserNotificationCenter.current().requestAuthorization(options: [.badge, .alert, .sound]) { (granted, error) in
             guard granted else { return }
@@ -39,5 +45,5 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         // Handle the notification data
     }
-    
+  
 }
