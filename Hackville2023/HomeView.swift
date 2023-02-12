@@ -6,11 +6,12 @@
 //
 
 import SwiftUI
-
 struct HomeView: View {
+  
 
     var body: some View {
-        NavigationView{
+       
+
         ScrollView{
                 VStack{
                     VStack(alignment: .leading, spacing: 5){
@@ -37,14 +38,13 @@ struct HomeView: View {
                         Label("Take Trash Out", systemImage: "checkmark.circle.fill")
 
                     }.frame(height: 200)
-                    
+               
                     NavigationLink(destination: ReminderView()){
-                        
-                        Label("Set a Reminder", systemImage: "bell.fill").frame(width: 350,height: 50).background(Color(uiColor: UIColor(red: 225/255, green: 218/255, blue: 209/255, alpha: 1))).cornerRadius(15.0).foregroundColor(Color.black)
+                       
+                        Label("Set a Reminder", systemImage: "bell.fill").frame(width: 350,height: 50).background(Color(uiColor: UIColor(red: 131/255, green: 209/255, blue: 217/255, alpha: 1))).cornerRadius(15.0).foregroundColor(Color.black)
                        
                     }
                 }
-            }
         }
     }
 }

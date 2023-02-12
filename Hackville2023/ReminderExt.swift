@@ -11,27 +11,27 @@ struct ReminderExt: View {
     var body: some View {
         VStack{
             
-            HStack{
+            
+
+            Label("Reminder Title", systemImage: "star.fill" ).padding(.bottom,100)
                 
-                Label("Reminder Title", systemImage: "star.fill" )
-                
-            }
+            Image("avatar")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 200,height: 200)
+                .cornerRadius(150)
             
             HStack{
                 Text("Sender: ")
-                AsyncImage(url: URL(string: "https://randomuser.me/api/portraits/women/80.jpg"))
-                    .frame(width: 70, height: 70)
-                                .background(Color.gray)
-                                .clipShape(Circle())
+                Image(systemName:"person.crop.circle")
+                                
                 Text("Nancy Jane")
             }
             
             HStack{
                 
                 Text("Category: ")
-                AsyncImage(url: URL(string: "https://cdn-icons-png.flaticon.com/512/4003/4003833.png"), scale: 10)
-                    .frame(width: 40, height: 40)
-                                .background(Color.white)
+                Image(systemName:"stethoscope")
                 Text("Health")
                 
                 
@@ -51,7 +51,7 @@ struct ReminderExt: View {
             }
         }
         .frame(width:350,height: 600)
-        .background(.gray)
+        .background(Color(uiColor: UIColor(red: 225/255, green: 218/255, blue: 209/255, alpha: 1)))
         .cornerRadius(50)
     }
 }
