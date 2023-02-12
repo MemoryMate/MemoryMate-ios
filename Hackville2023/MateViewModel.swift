@@ -6,7 +6,8 @@
 //
 
 import Foundation
-
+import Alamofire
+import SwiftyJSON
 
 struct Mate: Codable, Identifiable {
     
@@ -16,6 +17,42 @@ struct Mate: Codable, Identifiable {
     var image: String = ""
     var isLoggedIn = false
     var mates: [Mate] = []
+    
+    
+    static func isLoggedIn() -> Bool {
+        if UserDefaults.standard.value(forKey: "userId") != nil {
+            return true
+        }
+        return false
+      }
+    
+    static func setUserNotificationToken(token: String, completionHandler: (_ success:Bool) -> ()) {
+        let parameters = [
+            "token": token
+        ]
+        print(token)
+//        Alamofire.request(.POST, APIEndpoints.setTokenURL(Mate.id), parameters: parameters, encoding: .JSON, headers: ["authorization": Mate.token])
+//            .validate()
+//            .responseJSON { response in
+//                switch response.result {
+//                case.Success:
+//                    print(response)
+//                    if let value = response.result.value {
+//                        let json = JSON(value)
+//
+//                        // We did it
+//
+//                        completionHandler(success: true)
+//                        return
+//                    }
+//                case.Failure(let error):
+//                    print(error)
+//                }
+//
+//                completionHandler(success: false)
+//            }
+      }
+    
     
 }
 
