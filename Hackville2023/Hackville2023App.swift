@@ -14,7 +14,8 @@ struct Hackville2023App: App {
     
     var body: some Scene {
         WindowGroup {
-            SignUpView(coreDM:CoreDataManager())
+            ProfileView(coreDM:CoreDataManager())
+           // SignUpView(coreDM:CoreDataManager())
         }
     }
 }

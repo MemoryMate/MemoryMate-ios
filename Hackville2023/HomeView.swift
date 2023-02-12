@@ -17,12 +17,19 @@ struct HomeView: View {
 
         ScrollView{
                 VStack{
-                    VStack(alignment: .leading, spacing: 5){
-                        Image("logo").resizable()
-                            .frame(width: 90.0, height: 90.0)
-                            .cornerRadius(150)
-                            .aspectRatio(contentMode: .fit)
-                    }.frame(maxWidth: .infinity, alignment: .leading).padding(.leading,10.0)
+              
+                        VStack(alignment: .leading, spacing: 5){
+                            Image("logo").resizable()
+                                .frame(width: 90.0, height: 90.0)
+                                .cornerRadius(150)
+                                .aspectRatio(contentMode: .fit)
+                        }.frame(maxWidth: .infinity, alignment: .leading).padding(.leading,10.0)
+                    VStack(alignment: .leading, spacing: 0){
+                        NavigationLink(destination: ReminderView()){
+                            Label("",systemImage: "person.3.sequence.fill").foregroundColor(Color.black).frame(width: 80,height: 50)
+                        }
+                    }.frame(maxWidth: .infinity, alignment: .trailing).padding(.leading,15.0)
+                        
                     
                     Text("Today is \(Date.now, format: .dateTime.day().month().year())").bold().font(Font.subheadline).font(.system(size: 30))
                         .padding()
