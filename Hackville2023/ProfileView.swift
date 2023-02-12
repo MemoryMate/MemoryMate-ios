@@ -12,8 +12,10 @@ struct ProfileView: View {
     @State var username:String = ""
     @State var password:String = ""
     @State private var animationAmount: CGFloat = 1
+    @State private var errorMessage: String = ""
     @Environment(\.managedObjectContext) var managedObjectContext
-
+    let coreDM: CoreDataManager
+    @State private var users: [User] = [User]()
     var body: some View {
         NavigationView{
         VStack{
@@ -37,6 +39,7 @@ struct ProfileView: View {
                 .padding(.bottom,20)
             
             Button(action:{
+              
             },label: {
                 NavigationLink(destination: HomeView()){
                     Text("LOGIN")
@@ -56,7 +59,9 @@ struct ProfileView: View {
                             }
                 }
             })
-            
+            .onAppear(perform: {
+               self.users =  coreDM.getAllUsers()
+            })
 //                NavigationLink(destination: HomeView()){
 //                    Text("LOGIN")
 //                        .font(.headline)
@@ -85,6 +90,6 @@ struct ProfileView: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView()
+        ProfileView(coreDM:CoreDataManager())
     }
 }
