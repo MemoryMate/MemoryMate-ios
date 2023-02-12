@@ -7,7 +7,11 @@
 
 import SwiftUI
 struct HomeView: View {
-  
+    let coreDM: CoreDataManager
+    @State private var users: [User] = [User]()
+    
+    // properties
+    @StateObject var rvm: ReminderViewModel = ReminderViewModel()
 
     var body: some View {
 
@@ -24,10 +28,8 @@ struct HomeView: View {
                         .padding()
                     
                     Text("Tasks for today").frame(maxWidth: .infinity, alignment: .leading).fontWeight(.semibold).font(.system(size: 20)).padding(.leading,10.0)
-                    List{
-                        Text("Do laundary")
-                        Text("Get groceries")
-                        Text("Walk the Dog")
+                    List(rvm.reminders){ r in
+                        Text("\(r.title)")
                     }.frame(height: 200)
                     
                     Text("Completed").frame(maxWidth: .infinity, alignment: .leading).fontWeight(.semibold).font(.system(size: 20)).padding(.leading,10.0)
@@ -44,12 +46,15 @@ struct HomeView: View {
                        
                     }
                 }
+        }.onAppear(){
+            self.users = coreDM.getAllUsers()
+            rvm.fetchData(id: "63e82910911dec2cc4f0f65a")
         }
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView(coreDM:CoreDataManager())
     }
 }
