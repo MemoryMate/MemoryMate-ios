@@ -2,7 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21513" systemVersion="22D49" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
         <attribute name="firstName" optional="YES" attributeType="String"/>
-        <attribute name="id" optional="YES" attributeType="String" defaultValueString="63e82910911dec2cc4f0f65a"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="lastName" optional="YES" attributeType="String"/>
         <attribute name="password" optional="YES" attributeType="String"/>
         <attribute name="userName" optional="YES" attributeType="String"/>
