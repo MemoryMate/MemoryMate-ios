@@ -11,11 +11,16 @@ import SwiftyJSON
 
 struct Mate: Codable, Identifiable {
     
-    var id: String = ""
+    var _id: String
+    var id: String {
+        _id
+    }
     var firstName: String = ""
     var lastName: String = ""
     var image: String = ""
+    var apnToken: String = ""
     var isLoggedIn = false
+    var __v: Int = 0
     var mates: [Mate] = []
     
     
@@ -31,26 +36,6 @@ struct Mate: Codable, Identifiable {
             "token": token
         ]
         print(token)
-//        Alamofire.request(.POST, APIEndpoints.setTokenURL(Mate.id), parameters: parameters, encoding: .JSON, headers: ["authorization": Mate.token])
-//            .validate()
-//            .responseJSON { response in
-//                switch response.result {
-//                case.Success:
-//                    print(response)
-//                    if let value = response.result.value {
-//                        let json = JSON(value)
-//
-//                        // We did it
-//
-//                        completionHandler(success: true)
-//                        return
-//                    }
-//                case.Failure(let error):
-//                    print(error)
-//                }
-//
-//                completionHandler(success: false)
-//            }
       }
     
     
@@ -62,10 +47,10 @@ class MateViewModel: ObservableObject {
     @Published var mates: [Mate] = [] // publish it to SwiftUI
     
     // fetch data using closure
-    func fetchData(){
+    func fetchData(id: String){
         
         //build URL from string
-        let urlString = "http://10.80.5.31/api/users"
+        let urlString = "http://10.80.5.31/api/users/mates/\(id)"
         guard let url = URL(string: urlString) else {
             print("Cannot create URL")
             return
@@ -103,7 +88,6 @@ class MateViewModel: ObservableObject {
         })
         //finally perform the task
         task.resume()
-        
         
     }
     

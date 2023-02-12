@@ -29,7 +29,9 @@ struct HomeView: View {
                     
                     Text("Tasks for today").frame(maxWidth: .infinity, alignment: .leading).fontWeight(.semibold).font(.system(size: 20)).padding(.leading,10.0)
                     List(rvm.reminders){ r in
-                        Text("\(r.title)")
+                        NavigationLink("\(r.title)"){
+                            ReminderExt(reminder: r)
+                        }
                     }.frame(height: 200)
                     
                     Text("Completed").frame(maxWidth: .infinity, alignment: .leading).fontWeight(.semibold).font(.system(size: 20)).padding(.leading,10.0)
