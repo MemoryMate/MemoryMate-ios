@@ -14,10 +14,12 @@ How we Built this app?
 
 iOS UI:
 
-<img width="398" alt="Screen Shot 2022-03-23 at 6 38 35 PM" src="https://user-images.githubusercontent.com/74334552/218310868-f00d4aa8-c5f0-4234-be1f-1e1602bfc39c.png">
+<img width="398" alt="Screen Shot 2022-03-23 at 6 38 35 PM" src="https://user-images.githubusercontent.com/74334552/218312974-7e9bcdfc-ede7-4c26-abf9-9dd3e494847e.png">
 
 
-<img width="398" alt="Screen Shot 2022-03-23 at 6 38 35 PM" src="https://user-images.githubusercontent.com/74334552/218310946-2271f78c-5615-474f-a8b2-9511fd828f06.png">
+<img width="398" alt="Screen Shot 2022-03-23 at 6 38 35 PM" src="https://user-images.githubusercontent.com/74334552/218312992-aa30e022-a759-4521-b349-b8f2e4ed4de5.png">
 
 
-<img width="398" alt="Screen Shot 2022-03-23 at 6 38 35 PM" src="https://user-images.githubusercontent.com/74334552/218310946-2271f78c-5615-474f-a8b2-9511fd828f06.png">
+<img width="398" alt="Screen Shot 2022-03-23 at 6 38 35 PM" src="https://user-images.githubusercontent.com/74334552/218313001-99df3227-6022-4223-bb31-97d16115ef75.png">
+
+
