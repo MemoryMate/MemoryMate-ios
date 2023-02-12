@@ -22,4 +22,6 @@ iOS UI:
 
 <img width="398" alt="Screen Shot 2022-03-23 at 6 38 35 PM" src="https://user-images.githubusercontent.com/74334552/218313001-99df3227-6022-4223-bb31-97d16115ef75.png">
 
+<img width="398" alt="Screen Shot 2022-03-23 at 6 38 35 PM" src="https://user-images.githubusercontent.com/74334552/218313946-ff23a7ac-18da-4a99-b66d-b467183e4ed9.png">
 
+<img width="398" alt="Screen Shot 2022-03-23 at 6 38 35 PM" src="https://user-images.githubusercontent.com/74334552/218313965-43cb549f-693d-4147-aa93-6744e2a8d0b9.png">
